@@ -47,7 +47,7 @@ def createCategoryCombinations():
     return result
 
 def overviewFilename(categories):
-    filename = "".join(categories) if len(categories) > 0 else "none"
+    filename = "".join(categories) if len(categories) > 0 else "index"
     return filename + ".md"
 
 
@@ -84,7 +84,7 @@ for cc in allCC:
 # Create index page
 pathlib.Path(BUILDDIR + "docs/").mkdir(parents=True, exist_ok=True)
 file = open(BUILDDIR + "docs/index.md", "w")
-file.write("<head><meta http-equiv='refresh' content='0; URL=overview/none.html'></head>")
+file.write("<head><meta http-equiv='refresh' content='0; URL=overview/index.html'></head>")
 file.close()
 
 # Create statistics page
