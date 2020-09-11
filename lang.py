@@ -1,0 +1,5 @@
+OVERVIEW_TITLE = "Overview"
+DROP_CATEGORIES = "Drop Category"
+PICK_CATEGORY = "Add Category"
+STATISTICS_TITLE = "Statistics"
+STATISTICS_TEXT = "Currently, there are {N_recipes} recipes listed in {N_categories} different categories.\n"
