@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import re, sys, os, itertools, pathlib
+import re, sys, os, itertools, pathlib, shutil
 from lang import *
 from conf import *
 
@@ -92,3 +92,9 @@ file = open(BUILDDIR + "docs/statistics.md", "w")
 file.write("# " + STATISTICS_TITLE + "\n\n")
 file.write(STATISTICS_TEXT.format(N_recipes = len(allRecipes), N_categories = len(allCategories)))
 file.close()
+
+# Copy recipes
+for r in allRecipes:
+    dst = pathlib.Path(BUILDDIR + "/docs/" + r[2])
+    dst.parents[0].mkdir(parents=True, exist_ok=True)
+    shutil.copy(RECIPEDIR + r[2], dst)
